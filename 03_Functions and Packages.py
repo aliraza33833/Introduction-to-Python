@@ -35,19 +35,15 @@ print(areas)
 
 
 # 03_Package
-r = 0.43 # Definition of radius
-
 import math # Import the math package
-
-C = 2*math.pi*r # Calculate C
+r = 0.43 # Definition of radius
+C = 2 * math.pi * r # Calculate C
 A = math.pi*r**2 # Calculate A
 print("Circumference: " + str(C))
 print("Area: " + str(A))
 
+from math import radians # Import radians function of math package
 r = 192500 # Definition of radius
 phi = 12
-
-from math import radians # Import radians function of math package
-
 dist = radians(12)*r # Travel distance of Moon over 12 degrees. Store in dist.
 print(dist)
