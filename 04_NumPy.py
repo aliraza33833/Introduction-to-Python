@@ -29,3 +29,59 @@ np_height_in = np.array(height_in)
 
 print(np_weight_lb[50]) # Print out the weight at index 50
 print(np_height_in[100:111]) # Print out sub-array of np_height: index 100 up to and including index 110
+
+
+# 02_2D NumPy
+baseball = [[180, 78.4],
+            [215, 102.7],
+            [210, 98.5],
+            [188, 75.2]] # Create baseball, a list of lists
+
+np_baseball = np.array([[180, 78.4],
+                        [215, 102.7],
+                        [210, 98.5],
+                        [188, 75.2]])# Create a 2D numpy array from baseball
+print(type(np_baseball))
+print(np_baseball.shape) # Print out the shape of np_baseball
+
+np_baseball = np.array(baseball) # Create a 2D numpy array from baseball
+print(np_baseball.shape) # Print out the shape of np_baseball
+
+np_baseball = np.array(baseball) # Create np_baseball (2 cols)
+print(np_baseball[49:50,:]) # Print out the 50th row of np_baseball
+
+np_weight_lb = np_baseball[:,1] # Select the entire second column of np_baseball
+print(np_baseball[123:124,:]) # Print out height of 124th player
+
+np_baseball = np.array(baseball) # Create np_baseball (3 cols)
+print(np_baseball + updated) # Print out addition of np_baseball and updated
+
+conversion = np.array([0.0254, 0.453592, 1]) # Create numpy array
+print(np_baseball * conversion) # Print out product of np_baseball and conversion
+
+
+# 03_Numpy: Basic Statistics
+np_height_in = np.array(np_baseball[:,0]) # Create np_height from np_baseball
+print(np.mean(np_height_in)) # Print out the mean of np_height
+print(np.median(np_height_in)) # Print out the median of np_height
+
+avg = np.mean(np_baseball[:,0]) # Print mean height (first column)
+print("Average: " + str(avg))
+
+med = np.median(np_baseball[:,0]) # Print median height. Replace 'None'
+print("Median: " + str(med))
+
+stddev = np.std(np_baseball[:,0]) # Print out the standard deviation on height. Replace 'None'
+print("Standard Deviation: " + str(stddev))
+
+corr = np.corrcoef(np_baseball[:,0],np_baseball[:,1]) # Print out correlation between first and second column. Replace 'None'
+print("Correlation: " + str(corr))
+
+np_positions = np.array(positions) # Convert positions and heights to numpy arrays
+np_heights = np.array(heights)
+
+gk_heights = np_heights[np_positions == 'GK'] # Heights of the goalkeepers: gk_heights
+other_heights = np_heights[np_positions != 'GK'] # Heights of the other players: other_heights
+
+print("Median height of goalkeepers: " + str(np.median(gk_heights))) # Print out the median height of goalkeepers. Replace 'None'
+print("Median height of other players: " + str(np.median(other_heights))) # Print out the median height of other players. Replace 'None'
